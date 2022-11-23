@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from "./Home.module.scss"
 
-const home = () => {
+const Home = () => {
   return (
     <div className={Styles.home}>
         <section className={Styles.welcomeCard}>
@@ -12,4 +12,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home

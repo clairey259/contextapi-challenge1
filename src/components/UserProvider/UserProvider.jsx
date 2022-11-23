@@ -4,7 +4,7 @@ import Nav from "../Nav";
 
 import Styles from "./UserProvider.module.scss";
 
-const userProvider = () => {
+const UserProvider = () => {
   return (
     <div className={Styles.userProvider}>
       <Nav />
@@ -13,4 +13,4 @@ const userProvider = () => {
   );
 };
 
-export default userProvider;
+export default UserProvider;

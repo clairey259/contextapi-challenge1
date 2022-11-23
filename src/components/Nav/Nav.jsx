@@ -2,7 +2,7 @@ import React from 'react'
 import NavMenu from '../NavMenu'
 import Styles from "./Nav.module.scss"
 
-const nav = () => {
+const Nav = () => {
   return (
     <div className={Styles.nav}>
         <section className={Styles.logo}>MazinApp</section>
@@ -11,4 +11,4 @@ const nav = () => {
   )
 }
 
-export default nav
+export default Nav
