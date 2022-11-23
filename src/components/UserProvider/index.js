@@ -1,2 +1,2 @@
-import UserProvider from "./userProvider";
+import UserProvider from "./UserProvider";
 export default UserProvider;

@@ -1,2 +1,2 @@
-import Home from "./home.jsx";
+import Home from "./Home.jsx";
 export default Home;

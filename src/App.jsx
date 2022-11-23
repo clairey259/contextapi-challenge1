@@ -1,10 +1,10 @@
 
 import './App.module.scss';
 import UserProvider from './components/UserProvider';
-
+import Styles from './App.module.scss'
 const App = () => {
   return (
-    <div className="App">
+    <div className={Styles.app}>
       <UserProvider/>
     </div>
   );
