@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Styles from "./Home.module.scss";
 import { UserContext } from "../../context/UserProvider/UserProvider";
 import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
+import ThemeButton from "../ThemeButton/ThemeButton";
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
         <h1>Welcome Home</h1>
         <h1>{data.name}</h1>
       </section>
+      <ThemeButton />
     </div>
   );
 };
