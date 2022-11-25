@@ -1,4 +1,4 @@
-.home {
+.homeLight {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -23,3 +23,32 @@
     }
   }
 }
+
+.homeDark {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 90vh;
+    color: white;
+    background-color: black;
+  
+  
+    .welcomeCard {
+      display: flex;
+      flex-direction: column;
+      height: 70%;
+      min-height: fit-content;
+      width: 70%;
+      min-width: fit-content;
+      border: white dotted 2px;
+      padding: 10px;
+      align-items: center;
+      justify-content: center;
+  
+      h1 {
+        font-family: monospace;
+        font-size: 2rem;
+      }
+    }
+  }
+  

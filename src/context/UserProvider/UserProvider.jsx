@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
-import Nav from "../Nav";
-import Home from "../Home";
+import Nav from "../../components/Nav";
+import Home from "../../components/Home";
 import Styles from "./UserProvider.module.scss";
 
 export const UserContext = createContext({});

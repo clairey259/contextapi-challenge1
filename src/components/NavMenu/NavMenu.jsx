@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
+import { UserContext } from '../../context/UserProvider/UserProvider';
 import Styles from './NavMenu.module.scss'
-import { UserContext } from '../UserProvider/UserProvider'
+
 
 const NavMenu = () => {
 
