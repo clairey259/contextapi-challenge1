@@ -5,13 +5,13 @@ import Styles from './NavMenu.module.scss'
 
 const NavMenu = () => {
 
-    const data = useContext(UserContext);
+    const user = useContext(UserContext);
 
 
   return (
     <div className={Styles.navMenu}>
         <select name="name" id='name'/>
-            <option value="name1">{data.name}</option>
+            <option value="name">{user.name}</option>
     </div>
   )
 }

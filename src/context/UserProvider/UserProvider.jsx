@@ -1,22 +1,32 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import Nav from "../../components/Nav";
 import Home from "../../components/Home";
 import Styles from "./UserProvider.module.scss";
+import Login from "../../components/Login/Login";
 
 export const UserContext = createContext({});
 
+
 const UserProvider = () => {
-  const user = {
-    name: "Claire Huizenga",
+
+
+
+const [currentUser, setCurrentUser] = useState("user");
+
+const user = {
+    name: currentUser,
+    setCurrentUser: setCurrentUser
   };
 
-  const [currentUser, setCurrentUser] = useState(user);
+  
+ 
 
   return (
-    <UserContext.Provider value={currentUser}>
+    <UserContext.Provider value={user}>
       <div className={Styles.userProvider}>
         <Nav />
         <Home />
+        <Login />
       </div>
     </UserContext.Provider>
   );
