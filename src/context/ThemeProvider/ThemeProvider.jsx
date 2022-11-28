@@ -11,7 +11,7 @@ const ThemeProvider = () => {
 
   const themeData = {
     isDarkTheme: isDarkTheme,
-    toggleTheme: toggleTheme
+    toggleTheme: toggleTheme,
   };
 
   return (
