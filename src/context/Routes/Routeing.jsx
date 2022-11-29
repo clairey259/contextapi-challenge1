@@ -8,17 +8,16 @@ import Nav from "../../components/Nav";
 import NotFound from "../../components/NotFound/NotFound";
 import ThemeButton from "../../components/ThemeButton/ThemeButton";
 
-
 const Routing = () => {
   return (
     <>
       <Nav />
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/createaccount" element={<CreateUser />}/>
-          <Route path="/logout" element={<Logout/>} />
-          <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/createaccount" element={<CreateUser />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <ThemeButton />
     </>

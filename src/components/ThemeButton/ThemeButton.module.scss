@@ -1,13 +1,22 @@
+.dark {
+  color: white;
+  background-color: black;
+}
+
+.light {
+  color: black;
+  background-color: white;
+}
 
 .buttonContainer {
-    display: flex;
-    align-items: center;
-    font-family: monospace;
-    font-weight: 2px;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-weight: 2px;
 
-    p {
-        margin: 3px;
-    }
+  p {
+    margin: 3px;
+  }
 }
 .switch {
   position: relative;
@@ -34,15 +43,15 @@
   transition: 0.4s;
 
   &:before {
-      position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: rgb(167, 159, 159);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: rgb(167, 159, 159);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
   }
 }
 

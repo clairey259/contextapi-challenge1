@@ -5,6 +5,7 @@ import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
 const ThemeButton = () => {
   const theme = useContext(ThemeContext);
   return (
+    <section className={theme.isDarkTheme ? Styles.dark : Styles.light}>
     <div className={Styles.buttonContainer}>
       <p>Light</p>
       <label className={Styles.switch}>
@@ -13,6 +14,7 @@ const ThemeButton = () => {
       </label>
       <p>Dark</p>
     </div>
+    </section>
   );
 };
 

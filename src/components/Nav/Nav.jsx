@@ -16,11 +16,22 @@ const Nav = () => {
     <nav className={theme.isDarkTheme ? Styles.navDark : Styles.navLight}>
       <h1>MazinApp</h1>
       <h3>Hello {user.name}</h3>
-      <h4 className={isMenuOpen ? Styles.hide : Styles.show} onMouseEnter={(e) => {toggleMenuOpen()}}>MENU</h4>
-      <div className={isMenuOpen ? Styles.show : Styles.hide} onMouseOut={(e) => {toggleMenuOpen()}}>
+      <h4
+        className={isMenuOpen ? Styles.hide : Styles.show}
+        onMouseEnter={(e) => {
+          toggleMenuOpen();
+        }}
+      >
+        MENU
+      </h4>
+      <div
+        className={isMenuOpen ? Styles.show : Styles.hide}
+        onMouseOut={(e) => {
+          toggleMenuOpen();
+        }}
+      >
         <NavMenu />
       </div>
-      
     </nav>
   );
 };
