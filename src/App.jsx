@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import "./App.module.scss";
 import Styles from "./App.module.scss";
 import ThemeProvider from "./context/ThemeProvider/ThemeProvider";
