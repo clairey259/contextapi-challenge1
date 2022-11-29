@@ -1,4 +1,5 @@
 import React from "react";
+import Styles from "./BasicForm.module.scss"
 
 const BasicForm = (props) => {
   const { inputOnePlaceholder, inputTwoPlaceholder, buttonText } = props;

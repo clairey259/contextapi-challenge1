@@ -61,14 +61,14 @@ const Login = () => {
           handleGoogleLogin();
         }}
       >
-        Login With Your Google Account{" "}
+        <b>Login</b> With Your Google Account{" "}
       </p>
       <p
         onClick={(e) => {
           navigate("/CreateAccount");
         }}
       >
-        Don't have an account? Create an Account
+        Don't have an account? <b>Create</b> an Account
       </p>
     </section>
   );

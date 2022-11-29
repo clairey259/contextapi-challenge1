@@ -1,18 +1,26 @@
+section{
+  display: flex;
+  justify-content: baseline;
+}
 .dark {
   color: white;
   background-color: black;
+  height: fit-content;
 }
 
 .light {
   color: black;
   background-color: white;
+  height: fit-content;
 }
 
 .buttonContainer {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: monospace;
   font-weight: 2px;
+  margin: 5px;
 
   p {
     margin: 3px;

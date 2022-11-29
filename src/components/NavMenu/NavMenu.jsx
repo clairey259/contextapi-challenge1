@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../context/UserProvider/UserProvider";
 import Styles from "./NavMenu.module.scss";
 
 const NavMenu = () => {
-  const user = useContext(UserContext);
 
   return (
-    <div className={Styles.navMenu}>
-      <div className={Styles.open}>
+      <div className={Styles.navMenu}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -21,7 +18,6 @@ const NavMenu = () => {
           </li>
         </ul>
       </div>
-    </div>
   );
 };
 
