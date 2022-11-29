@@ -11,7 +11,8 @@ const NavMenu = () => {
 
   return (
     <div className={Styles.navMenu}>
-       <div >
+
+       <div className={Styles.open}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -20,7 +21,7 @@ const NavMenu = () => {
             <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to="/logout">LogOut</Link>
           </li>
         </ul>
        </div>
@@ -30,3 +31,24 @@ const NavMenu = () => {
 }
 
 export default NavMenu
+
+{/* <div className={Styles.navMenu}>
+<div>
+  <ul>
+    <li>
+      <Link to="/">Home</Link>
+    </li>
+    <li>
+      <Link to="/login">Login</Link>
+    </li>
+    <li
+      onClick={(e) => {
+        e.preventDefault();
+        handleLogOut();
+      }}
+    >
+      Logout
+    </li>
+  </ul>
+</div>
+</div> */}

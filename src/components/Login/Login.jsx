@@ -45,7 +45,11 @@ const Login = () => {
     <>
       <form action="action_page.php" method="post" onSubmit={handleLoginSubmit}>
         <div className={Styles.container}>
-          <BasicForm inputOnePlaceholder="Enter Username" inputTwoPlaceholder="Enter Password" buttonText="Login" />
+          <BasicForm
+            inputOnePlaceholder="Enter Username"
+            inputTwoPlaceholder="Enter Password"
+            buttonText="Login"
+          />
         </div>
       </form>
       <p
