@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
+import BasicForm from "../BasicForm/BasicForm";
 
 const Login = () => {
   const user = useContext(UserContext);
@@ -20,7 +21,7 @@ const Login = () => {
     signInWithRedirect(auth, provider);
   };
 
-  const handleSubmit = (e) => {
+  const handleLoginSubmit = (e) => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
@@ -42,40 +43,24 @@ const Login = () => {
 
   return (
     <>
-      <form action="action_page.php" method="post" onSubmit={handleSubmit}>
+      <form action="action_page.php" method="post" onSubmit={handleLoginSubmit}>
         <div className={Styles.container}>
-          <label for="uname">
-            <b>Username</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter Username"
-            name="uname"
-            required
-          />
-
-          <label for="psw">
-            <b>Password</b>
-          </label>
-          <input
-            type="password"
-            placeholder="Enter Password"
-            name="psw"
-            required
-          />
-
-          <button type="submit">Login</button>
+          <BasicForm inputOnePlaceholder="Enter Username" inputTwoPlaceholder="Enter Password" buttonText="Login" />
         </div>
       </form>
-      <p>
-        Or Login With Your Google Account{" "}
-        <a
-          onClick={(e) => {
-            handleGoogleLogin();
-          }}
-        >
-          HERE
-        </a>
+      <p
+        onClick={(e) => {
+          handleGoogleLogin();
+        }}
+      >
+        Login With Your Google Account{" "}
+      </p>
+      <p
+        onClick={(e) => {
+          navigate("/CreateAccount");
+        }}
+      >
+        Don't have an account? Create an Account
       </p>
     </>
   );

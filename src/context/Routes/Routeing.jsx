@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import CreateUser from "../../components/CreateUser/CreateUser";
 import Home from "../../components/Home";
 import Login from "../../components/Login/Login";
 import Nav from "../../components/Nav";
@@ -15,6 +16,7 @@ const Routing = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/createaccount" element={<CreateUser />}/>
           <Route path="*" element={<NotFound />} />
       </Routes>
       <ThemeButton />
