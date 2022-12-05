@@ -6,7 +6,7 @@ const ThemeButton = () => {
   const theme = useContext(ThemeContext);
   return (
     <section className={theme.isDarkTheme ? Styles.dark : Styles.light}>
-    <div className={Styles.buttonContainer}>
+    <div className={Styles.buttonContainer} data-testid="buttonContainer">
       <p>Light</p>
       <label className={Styles.switch}>
         <input type="checkbox" />

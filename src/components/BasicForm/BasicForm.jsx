@@ -5,19 +5,23 @@ const BasicForm = (props) => {
   const { inputOnePlaceholder, inputTwoPlaceholder, buttonText } = props;
   return (
     <>
-      <label for="uname">
+      <label htmlFor="uname">
         <b>Username</b>
       </label>
       <input
+        id="uname"
+        role="textbox"
         type="text"
         placeholder={inputOnePlaceholder}
         name="uname"
         required
       />
-      <label for="psw">
+      <label htmlFor="psw">
         <b>Password</b>
       </label>
       <input
+        id="psw"
+        role="textbox"
         type="password"
         placeholder={inputTwoPlaceholder}
         name="psw"

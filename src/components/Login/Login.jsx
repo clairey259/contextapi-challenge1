@@ -8,17 +8,17 @@ import {
   signInWithRedirect,
   updateCurrentUser,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Router, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
 import BasicForm from "../BasicForm/BasicForm";
 import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
 
-const Login = () => {
+const Login = ({navigate}) => {
   const theme = useContext(ThemeContext);
 
   const user = useContext(UserContext);
   const provider = new GoogleAuthProvider();
-  const navigate = useNavigate();
+
 
   const handleGoogleLogin = (e) => {
     signInWithRedirect(getAuth(app), provider)
@@ -46,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <section className={theme.isDarkTheme ? Styles.dark : Styles.light}>
+    <section className={theme.isDarkTheme ? Styles.dark : Styles.light} data-testid="themeContainer">
       <form action="action_page.php" method="post" onSubmit={handleLoginSubmit}>
         <div className={Styles.container}>
           <BasicForm
@@ -59,18 +59,19 @@ const Login = () => {
       <p
         onClick={(e) => {
           handleGoogleLogin();
-        }}
+        }} data-testid="googleLogin"
       >
         <b>Login</b> With Your Google Account{" "}
       </p>
       <p
         onClick={(e) => {
           navigate("/CreateAccount");
-        }}
+        }} data-testid="createAccount"
       >
         Don't have an account? <b>Create</b> an Account
       </p>
     </section>
+    
   );
 };
 
