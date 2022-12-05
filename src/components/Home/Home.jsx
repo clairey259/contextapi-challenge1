@@ -8,7 +8,7 @@ const Home = () => {
   const theme = useContext(ThemeContext);
 
   return (
-    <div className={theme.isDarkTheme ? Styles.homeDark : Styles.homeLight} data-testid="themeContainer">
+    <div className={theme.isDarkTheme ? Styles.homeDark : Styles.homeLight} data-testid="home">
       <section className={Styles.welcomeCard}>
         <h1>Welcome Home</h1>
         <h1>{user.name}</h1>

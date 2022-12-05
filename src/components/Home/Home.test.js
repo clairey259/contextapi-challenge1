@@ -34,7 +34,7 @@ test("should display light theme", () => {
       <Home />
     </ThemeContext.Provider>
   );
-  const containerElement = screen.getByTestId("themeContainer");
+  const containerElement = screen.getByTestId("home");
 
   expect(containerElement).toHaveClass("homeLight");
 });
@@ -45,7 +45,7 @@ test("should display dark theme", () => {
       <Home />
     </ThemeContext.Provider>
   );
-  const containerElement = screen.getByTestId("themeContainer");
+  const containerElement = screen.getByTestId("home");
 
   expect(containerElement).toHaveClass("homeDark");
 });

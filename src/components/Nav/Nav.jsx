@@ -8,30 +8,33 @@ const Nav = () => {
   const theme = useContext(ThemeContext);
   const user = useContext(UserContext);
 
-  const [isMenuOpen, setisMenuOpen] = useState(false);
-  const toggleMenuOpen = () => {
-    setisMenuOpen(!isMenuOpen);
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <nav className={theme.isDarkTheme ? Styles.navDark : Styles.navLight}>
+    <nav
+      className={theme.isDarkTheme ? Styles.navDark : Styles.navLight}
+      data-testid="navBar"
+    >
       <h1>MazinApp</h1>
       <h3>Hello {user.name}</h3>
-      <h4
-        className={isMenuOpen ? Styles.hide : Styles.show}
-        onMouseEnter={(e) => {
-          toggleMenuOpen();
-        }}
-      >
-        MENU
-      </h4>
       <div
-        className={isMenuOpen ? Styles.show : Styles.hide}
-        onMouseOut={(e) => {
-          toggleMenuOpen();
-        }}
-      >
-        <NavMenu />
-      </div>
+        onMouseEnter={(e) => setIsMenuOpen(true)}
+        onMouseOut={(e) => setIsMenuOpen(false)}>
+      {!isMenuOpen && (
+        <h4
+          data-testid="menuLabel"
+        >
+          MENU
+        </h4>
+      )}
+      {isMenuOpen && (
+        <div
+          data-testid="navMenuStyles"
+        >
+          <NavMenu />
+        </div>
+      )}
+      </div>      
     </nav>
   );
 };

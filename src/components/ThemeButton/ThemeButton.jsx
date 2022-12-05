@@ -5,7 +5,7 @@ import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
 const ThemeButton = () => {
   const theme = useContext(ThemeContext);
   return (
-    <section className={theme.isDarkTheme ? Styles.dark : Styles.light}>
+    <section className={theme.isDarkTheme ? Styles.dark : Styles.light} data-testid="themeButton">
     <div className={Styles.buttonContainer} data-testid="buttonContainer">
       <p>Light</p>
       <label className={Styles.switch}>
