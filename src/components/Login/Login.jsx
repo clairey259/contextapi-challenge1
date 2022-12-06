@@ -10,7 +10,6 @@ const Login = ({ navigate }) => {
   const theme = useContext(ThemeContext);
 
   const user = useContext(UserContext);
-
   const handleUpdateUser = async (userInfo) => {
     await user.setCurrentUser(userInfo);
   };
@@ -24,19 +23,20 @@ const Login = ({ navigate }) => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+    if (user.name == "user") {
+      const email = e.target[0].value;
+      const password = e.target[1].value;
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        handleUpdateUser(res.user.email);
-        updateCurrentUser(res.user.email);
-        handleAlertandRedirect("Welcome back to MazinApp", 1000);
-      })
+      signInWithEmailAndPassword(auth, email, password)
+        .then((res) => {
+          handleUpdateUser(res.user.email);
+          handleAlertandRedirect("Welcome back to MazinApp", 1000);
+        })
 
-      .catch((e) => {
-        alert("sorry something went wrong");
-      });
+        .catch((e) => {
+          alert("sorry something went wrong");
+        });
+    } else alert("You need to logout first!");
   };
 
   return (
@@ -55,12 +55,14 @@ const Login = ({ navigate }) => {
       </form>
       <p
         onClick={(e) => {
-          handleGoogleLogin()
-            .then((res) => handleUpdateUser(res))
-            .then(() => handleAlertandRedirect("Welcome to MazinApp", 1000))
-            .catch(() =>
-              handleAlertandRedirect("Sorry! Something went wrong", 2000)
-            );
+          if (user.name == "user") {
+            handleGoogleLogin()
+              .then((res) => handleUpdateUser(res))
+              .then(() => handleAlertandRedirect("Welcome to MazinApp", 1000))
+              .catch(() =>
+                handleAlertandRedirect("Sorry! Something went wrong", 2000)
+              );
+          } else alert("You need to logout first!");
         }}
         data-testid="googleLogin"
       >

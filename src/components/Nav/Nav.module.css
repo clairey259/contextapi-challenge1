@@ -1,3 +1,7 @@
+.menu {
+  height: 100%;
+}
+
 .navLight {
   display: flex;
   padding: 20px;
@@ -7,10 +11,10 @@
   justify-content: space-between;
   align-items: center;
   border: black dotted 2px;
-  h1 {
-    font-size: 2rem;
-    font-weight: 100;
-  }
+}
+.navLight h1 {
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 .navDark {
@@ -24,10 +28,10 @@
   border: white dotted 2px;
   color: white;
   background-color: black;
-  h1 {
-    font-size: 2rem;
-    font-weight: 100;
-  }
+}
+.navDark h1 {
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 .show {

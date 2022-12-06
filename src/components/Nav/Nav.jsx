@@ -19,22 +19,15 @@ const Nav = () => {
       <h3>Hello {user.name}</h3>
       <div
         onMouseEnter={(e) => setIsMenuOpen(true)}
-        onMouseOut={(e) => setIsMenuOpen(false)}>
-      {!isMenuOpen && (
-        <h4
-          data-testid="menuLabel"
-        >
-          MENU
-        </h4>
-      )}
-      {isMenuOpen && (
-        <div
-          data-testid="navMenuStyles"
-        >
-          <NavMenu />
-        </div>
-      )}
-      </div>      
+        onMouseOut={(e) => setIsMenuOpen(false)}
+      >
+        {!isMenuOpen && <h4 data-testid="menuLabel">MENU</h4>}
+        {isMenuOpen && (
+          <div data-testid="navMenuStyles">
+            <NavMenu />
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

@@ -14,12 +14,14 @@ const CreateUser = () => {
 
   const handleCreateUserSubmit = (e) => {
     e.preventDefault();
+    if (user.name == "user") {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(alert("Thanks for joining MazinApp. Please log in"))
       .then(navigate("/login"));
+    } else alert ("You need to logout first")
   };
 
   return (
