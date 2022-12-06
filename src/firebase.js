@@ -13,7 +13,6 @@ import {
   collection,
   where,
   doc,
-  addDoc,
   setDoc,
 } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -41,17 +40,16 @@ const handleGoogleLogin = async (e) => {
   const response = await signInWithPopup(auth, googleProvider);
   const googleUser = response.user;
   const q = query(googleUserRef, where("email", "==", googleUser.email));
-  const qDoc = await getDocs(q)
+  const qDoc = await getDocs(q);
 
   if (qDoc.empty) {
     await setDoc(doc(googleUserRef, googleUser.displayName), {
-      email: googleUser.email
+      email: googleUser.email,
     });
     return googleUser.email;
   } else {
-    return googleUser.email
+    return googleUser.email;
   }
-
 };
 
 export { auth, db, handleGoogleLogin };
