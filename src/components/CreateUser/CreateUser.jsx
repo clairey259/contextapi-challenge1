@@ -3,7 +3,7 @@ import BasicForm from "../BasicForm/BasicForm";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { UserContext } from "../../context/UserProvider/UserProvider";
 import { useNavigate } from "react-router-dom";
-import { app } from "../../firebase";
+import { auth } from "../../firebase";
 import Styles from "./CreateUser.module.scss";
 import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
 const CreateUser = () => {
@@ -17,7 +17,7 @@ const CreateUser = () => {
     const email = e.target[0].value;
     const password = e.target[1].value;
 
-    createUserWithEmailAndPassword(getAuth(app), email, password)
+    createUserWithEmailAndPassword(auth, email, password)
       .then(alert("Thanks for joining MazinApp. Please log in"))
       .then(navigate("/login"));
   };

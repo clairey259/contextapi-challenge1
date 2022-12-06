@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeProvider/ThemeProvider";
 import { UserContext } from "../../context/UserProvider/UserProvider";
-import { app } from "../../firebase";
+import { app, auth } from "../../firebase";
 import Styles from "./Logout.module.scss";
 
 const Logout = () => {
@@ -12,7 +12,7 @@ const Logout = () => {
   const navigate = useNavigate();
 
   const handleLogoutSubmit = (e) => {
-    signOut(getAuth(app))
+    signOut(auth)
       .then(user.setCurrentUser("user"))
       .then(alert("You have successfully been logged out"))
       .then(navigate("/login"));

@@ -1,9 +1,15 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore'
-
+import {
+  GoogleAuthProvider, 
+  getAuth,
+  signInWithPopup,
+  updateCurrentUser,
+} from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore } from "firebase/firestore"
+import { UserContext } from "./context/UserProvider/UserProvider";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -16,5 +22,32 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const firestore = getFirestore(app)
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
+const currentUser = UserContext(UserContext);
+
+
+const handleGoogleLogin = async (e) => {
+  const response = await signInWithPopup(auth, googleProvider)
+  const googleUser = response.user
+    .then(() => {
+      updateCurrentUser(googleUser.email);
+      currentUser.setCurrentUser(googleUser.email);
+      
+      alert("welcome back to MazinApp");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+    })
+  console.log(response)
+  console.log(googleUser)
+    // .then((res) => {
+    //   updateCurrentUser(res)
+    //   user.setCurrentUser(app.User.email)
+    // })
+};
+export {
+  auth, db, handleGoogleLogin
+}
