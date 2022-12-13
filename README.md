@@ -1,4 +1,4 @@
-A react app created as part of a challenge in module 7 - of the self paced _Nology course. <br />
+A react app created as part of a challenge in 'module 7 - Client Project Tools' of the self paced _Nology course. <br />
 
 Challenge: <br />
 
