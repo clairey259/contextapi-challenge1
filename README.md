@@ -1,6 +1,6 @@
-A react app created as part of a challenge in 'module 7 - Client Project Tools' of the self paced _Nology course. <br />
+A react app created as part of a _Nology challenge in Module 7 - "Client Project Tools" <br />
 
-Challenge: <br />
+The Brief: <br />
 
 - Create a react app following a provided component tree.<br />
 - connect app to firebase/firestore <br />
